@@ -104,22 +104,26 @@ public class EmployeeDAO {
         }
     }
 
-    public Employee findByName(String nameFind) {
+    public List<Employee> findByName(String nameFind) {
+        List<Employee> employees = new ArrayList<>();
         String find = "SELECT * from employee " +
                 "where email like '%" + nameFind + "%\'";
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(find);
             List<Employee> nhanviens = new ArrayList<>();
-
-            resultSet.next();
+            while (resultSet.next()){
                 String email = resultSet.getString("email");
                 String name = resultSet.getString("name");
                 String address = resultSet.getString("address");
                 String phone = resultSet.getString("phone");
                 double salary = resultSet.getDouble("salary");
                 int id = resultSet.getInt("idDepartment");
-                return new Employee(email, name, address, phone, salary, id);
+                employees.add(new Employee(email, name, address, phone, salary, id)) ;
+            }
+
+            return employees;
+
 
 
         } catch (Exception e) {

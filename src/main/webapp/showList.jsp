@@ -39,7 +39,7 @@
         </thead>
         <tbody>
         <button><a href="/create">Create</a></button>
-        <form action="/search" method="post">
+        <form action="/search">
             <input name="search">
             <button type="submit">Search</button>
         </form>
