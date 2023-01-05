@@ -84,6 +84,26 @@ public class EmployeeDAO {
         }
     }
 
+    public Employee findEm(String email) {
+        try {
+            String sql = "select * FROM employee  WHERE email = ? ;";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+            String name = resultSet.getString("name");
+            String address = resultSet.getString("address");
+            String phone = resultSet.getString("phone");
+            double salary = resultSet.getDouble("salary");
+            int id = resultSet.getInt("idDepartment");
+            return new Employee(email, name, address, phone, salary, id);
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
+    }
+
     public Employee findByName(String nameFind) {
         String find = "SELECT * from employee " +
                 "where email like '%" + nameFind + "%\'";
@@ -98,7 +118,7 @@ public class EmployeeDAO {
                 String address = resultSet.getString("address");
                 String phone = resultSet.getString("phone");
                 double salary = resultSet.getDouble("salary");
-                int id = resultSet.getInt("idClassRoom");
+                int id = resultSet.getInt("idDepartment");
                 return new Employee(email, name, address, phone, salary, id);
 
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -14,14 +15,9 @@
 <body>
 <h1>Edit customer</h1>
 <p>
-  <c:if test='${requestScope["message"] != null}'>
-    <span class="message">${requestScope["message"]}</span>
-  </c:if>
+  <a href="/Home">Back to customer list</a>
 </p>
-<p>
-  <a href="/student">Back to customer list</a>
-</p>
-<form method="post">
+<form method="post"  action="/edit">
   <fieldset>
     <legend>Customer information</legend>
     <table>

@@ -17,7 +17,7 @@ public class Edit extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
-        Employee employee = employeeDAO.findByName(email);
+        Employee employee = employeeDAO.findEm(email);
         req.setAttribute("employee",employee);
         RequestDispatcher dispatcher = req.getRequestDispatcher("edit.jsp");
         dispatcher.forward(req,resp);
