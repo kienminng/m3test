@@ -31,15 +31,15 @@
       </tr>
       <tr>
         <td>address </td>
-        <td><input type="text" name="birth" id="birth" value="${employee.address}"></td>
+        <td><input type="text" name="address" id="address" value="${employee.address}"></td>
       </tr>
       <tr>
         <td>Phone: </td>
-        <td><input type="text" name="address" id="address" value="${employee.phone}"></td>
+        <td><input type="text" name="phone" id="phone" value="${employee.phone}"></td>
       </tr>
       <tr>
         <td>Salary: </td>
-        <td><input type="text" name="phone" id="phone" value="${employee.salary}"></td>
+        <td><input type="text" name="salary" id="salary" value="${employee.salary}"></td>
       </tr>
 
       <tr>

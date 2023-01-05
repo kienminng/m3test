@@ -56,9 +56,9 @@ public class EmployeeDAO {
         }
     }
 
-    public  void update(Employee employee) {
+    public void update(Employee employee) {
         try {
-            String sql = "update employee set name = ? , address=?,phone=?,salary=? ,idDepartment=? where email=?";
+            String sql = "update employee set name = ? , address=? ,phone=? ,salary=?, IdDepartment=? where email=?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, employee.getName());
             preparedStatement.setString(2, employee.getAddress());
