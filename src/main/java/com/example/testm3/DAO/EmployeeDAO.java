@@ -37,8 +37,8 @@ public class EmployeeDAO {
         return null;
     }
 
-    public void saveHocVien(Employee employee) {
-        String insert = "INSERT INTO employee VALUES (?,?,?,?,?,?)";
+    public void save(Employee employee) {
+        String insert = "INSERT INTO employee VALUE (?,?,?,?,?,?)";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(insert);

@@ -13,7 +13,7 @@
 </head>
 <body>
 <form method="post" action="/create">
-  Add new Student
+  Add new Employee
   <table>
     <tr>
 
@@ -39,7 +39,7 @@
 
     <tr>
       <td>
-        <select name="idClassRoom">
+        <select name="idClassRoom" >
 
           <option value="1">Nhan vien</option>
           <option value="2">quan li</option>

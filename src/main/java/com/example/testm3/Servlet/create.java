@@ -32,9 +32,9 @@ public class create extends HttpServlet {
         String address = req.getParameter("address");
         String phone = req.getParameter("phone");
         double salary = Double.parseDouble(req.getParameter("salary"));
-        int id = Integer.parseInt(req.getParameter("class"));
+        int id = Integer.parseInt(req.getParameter("idClassRoom"));
 
-        employeeDAO.saveHocVien(new Employee(email,name,address,phone,salary,id));
+        employeeDAO.save(new Employee(email,name,address,phone,salary,id));
         resp.sendRedirect("/Home");
     }
 }
