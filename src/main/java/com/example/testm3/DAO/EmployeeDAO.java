@@ -75,7 +75,7 @@ public class EmployeeDAO {
 
     public  void deleteUser(String email) {
         try {
-            String sql = "DELETE FROM employ WHERE email = ? ;";
+            String sql = "DELETE FROM employee WHERE email = ? ;";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, email);
             preparedStatement.execute();
